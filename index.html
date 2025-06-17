@@ -124,6 +124,18 @@
         };
         abstract.addTo(map);
         var zoomControl = L.control.zoom({
+            position: 'topright'
+        }).addTo(map);
+		 abstract.show();
+                return this._div;
+            };
+            abstract.show = function () {
+                this._div.classList.remove("abstract");
+                this._div.classList.add("abstractUncollapsed");
+		this._div.innerHTML = "Muhammad Syidhan Satria (K5422052) & Nida Khoirun Nangim (K5422060).";
+        };
+        abstract.addTo(map);
+        var zoomControl = L.control.zoom({
             position: 'topleft'
         }).addTo(map);
         L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
