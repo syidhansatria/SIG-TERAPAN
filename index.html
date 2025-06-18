@@ -131,6 +131,21 @@
 		this._div.innerHTML = 'Salatiga sering dijuluki sebagai Kota Toleransi dan Kota Pendidikan. Kombinasi antara keindahan alam, kedamaian sosial, dan aktivitas akademik menjadikan kota ini tempat yang nyaman untuk tinggal atau berkunjung.';
                 };
         abstract.addTo(map);
+		var abstract = new L.Control({'position':'bottomright'});
+        abstract.onAdd = function (map) {
+            this._div = L.DomUtil.create('div',
+            'leaflet-control abstract');
+            this._div.id = 'abstract'
+
+                abstract.show();
+                return this._div;
+            };
+            abstract.show = function () {
+                this._div.classList.remove("abstract");
+                this._div.classList.add("abstractUncollapsed");
+		this._div.innerHTML = 'Muhammad Syidhan Satria (K5422052) & Nida Khoirun Nangim (K5422060).';
+                };
+        abstract.addTo(map);
         var zoomControl = L.control.zoom({
             position: 'topleft'
         }).addTo(map);
